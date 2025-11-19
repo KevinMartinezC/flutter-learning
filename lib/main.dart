@@ -11,9 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp( //add const when it will never change
+    return MaterialApp( //add const when it will never change
     debugShowCheckedModeBanner: false,
         home: CounterScreen(),
+        theme: ThemeData(
+          colorSchemeSeed: Colors.blue
+        ),
     );
   }
 }

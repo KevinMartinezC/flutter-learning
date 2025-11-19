@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:learningdart/presentation/screens/counter/counter_funtion_screen.dart';
 import 'package:learningdart/presentation/screens/counter/counter_screen.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp( //add const when it will never change
     debugShowCheckedModeBanner: false,
-        home: CounterScreen(),
+        home: CounterFuntionScreen(),
         theme: ThemeData(
           colorSchemeSeed: Colors.blue
         ),

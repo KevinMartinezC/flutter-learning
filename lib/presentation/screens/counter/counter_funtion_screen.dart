@@ -15,11 +15,14 @@ class _CounterFuntionScreenState extends State<CounterFuntionScreen> {
       appBar: AppBar(
         title: const Text("Counter Funtion Screen"),
         actions: [
-          IconButton(onPressed: () {
-            setState(() {
-              clickCounter = 0;
-            });
-          }, icon: Icon(Icons.refresh_rounded)),
+          IconButton(
+            onPressed: () {
+              setState(() {
+                clickCounter = 0;
+              });
+            },
+            icon: Icon(Icons.refresh_rounded),
+          ),
         ],
       ),
       body: Center(
@@ -40,14 +43,31 @@ class _CounterFuntionScreenState extends State<CounterFuntionScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            clickCounter++;
-          });
-        },
-        child: Icon(Icons.plus_one),
+      floatingActionButton: Column(
+        mainAxisAlignment: .end,
+        children: [
+          CustomButton(icon: Icons.refresh_outlined),
+          const SizedBox(height: 10),
+          CustomButton(icon: Icons.exposure_minus_1_outlined),
+          const SizedBox(height: 10),
+          CustomButton(icon: Icons.plus_one),
+        ],
       ),
     );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final IconData icon;
+
+  const CustomButton({super.key, required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      shape: StadiumBorder(),
+      onPressed: () {},
+       child: Icon(icon)
+       );
   }
 }
